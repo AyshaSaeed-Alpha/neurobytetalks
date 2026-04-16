@@ -15,9 +15,7 @@ function Home() {
     });
   }, []);
 
-  // =========================
   // LOADING STATE (SKELETON)
-  // =========================
   if (loading) {
     return (
       <div className="w-full py-8 mt-4 text-center">
@@ -26,7 +24,7 @@ function Home() {
             {Array.from({ length: 8 }).map((_, i) => (
               <div
                 key={i}
-                className="h-64 bg-gray-200 animate-pulse rounded-xl"
+                className="h-64  bg-white whianimate-pulse rounded-xl"
               />
             ))}
           </div>
@@ -35,9 +33,7 @@ function Home() {
     );
   }
 
-  // =========================
   // EMPTY STATE
-  // =========================
   if (posts.length === 0) {
     return (
       <div className="w-full py-8 mt-4 text-center">
@@ -55,9 +51,7 @@ function Home() {
     );
   }
 
-  // =========================
   // MAIN UI (RESPONSIVE FIX)
-  // =========================
   return (
     <div className="w-full py-8">
       <Container>

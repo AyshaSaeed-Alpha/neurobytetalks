@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   return !loading ? (
-    <div className="flex flex-col min-h-screen bg-gray-50 text-gray-900">
+    <div className="flex flex-col min-h-screen bg-white text-gray-900">
       <Header />
 
       <main className="flex-grow">

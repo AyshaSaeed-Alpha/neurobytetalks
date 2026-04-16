@@ -39,10 +39,18 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
                   "fullscreen",
                   "media",
                   "table",
+                  "emoticons",
+                  "insertdatetime",
+                  "charmap",
+                  "directionality",
+                  "advlist",
+                  "autolink",
                 ],
 
                 toolbar:
-                  "undo redo | bold italic underline | blocks | bullist numlist | blockquote | alignleft aligncenter alignright | link image | code",
+                  "undo redo | blocks | fontfamily fontsize | bold italic underline | forecolor backcolor | " +
+                  "alignleft aligncenter alignright | bullist numlist | blockquote | " +
+                  "link image media | table | code fullscreen preview | emoticons | help",
 
                 branding: false,
                 resize: true,

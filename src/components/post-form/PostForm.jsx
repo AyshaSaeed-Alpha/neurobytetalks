@@ -315,7 +315,7 @@ export default function PostForm({ post }) {
         </div>
 
         <div className="post-form__field">
-          <label className="post-form__label">Slug</label>
+          <label className="post-form__label">URL-title Id</label>
           <input
             className="post-form__input"
             {...register("slug", { required: true })}

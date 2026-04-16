@@ -11,6 +11,7 @@ import EditPost from "./pages/EditPost.jsx";
 import Signup from "./pages/Signup.jsx";
 import AddPost from "./pages/AddPost.jsx";
 import Post from "./pages/Post.jsx";
+import About from "./pages/About.jsx";
 import AllPosts from "./pages/AllPosts";
 //TODO: add all the routes here in main.jsx
 const router = createBrowserRouter([
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/about-us",
+        element: <About />,
+      },
+
+      {
         path: "/all-posts",
         element: <AllPosts />,
       },
@@ -51,6 +57,7 @@ const router = createBrowserRouter([
           </AuthLayout>
         ),
       },
+
       {
         path: "/edit-post/:slug",
         element: (

@@ -6,94 +6,72 @@ function Footer() {
   return (
     <section className="footer-container">
       <div className="footer-content">
-        <div className="footer-grid">
-          <div className="footer-col-main">
-            <div className="footer-main-wrapper">
-              <div className="footer-logo">
-                <p width="100px" className="logo-style">
-                  NeuroByteTalks
-                </p>
-              </div>
-              <div>
-                <p className="copyright-text">
-                  &copy; Copyright 2025: All Rights Reserved by Neurobytetalks.
-                </p>
-              </div>
+        <div className="footer-top">
+          <div className="footer-brand">
+            <p className="logo-style">NeuroByteTalks</p>
+            <div className="brand-line"></div>
+            <p className="footer-subtext">
+              Articles snd blogs platform for modern publishing.
+            </p>
+          </div>
+
+          <div className="footer-links">
+            <div className="link-group">
+              <p className="footer-title">Links</p>
+              <Link className="footer-link" to="/">
+                Home
+              </Link>
+              <Link className="footer-link" to="/">
+                Posts
+              </Link>
+              <Link className="footer-link" to="/">
+                About
+              </Link>
+            </div>
+
+            <div className="link-group">
+              <p className="footer-title">Support</p>
+              <Link className="footer-link" to="/">
+                Help
+              </Link>
+              <Link className="footer-link" to="/">
+                Contact
+              </Link>
+              <Link className="footer-link" to="/">
+                Docs
+              </Link>
+            </div>
+
+            <div className="link-group">
+              <p className="footer-title">Legal</p>
+              <Link className="footer-link" to="/">
+                Privacy
+              </Link>
+              <Link className="footer-link" to="/">
+                Terms
+              </Link>
+              <Link className="footer-link" to="/">
+                Policy
+              </Link>
             </div>
           </div>
+        </div>
 
-          <div className="footer-col-links">
-            <h3 className="footer-heading">Company</h3>
-            <ul className="footer-list">
-              <li>
-                <Link className="footer-link" to="/">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link className="footer-link" to="/">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link className="footer-link" to="/">
-                  Affiliate Program
-                </Link>
-              </li>
-              <li>
-                <Link className="footer-link" to="/">
-                  Press Kit
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="footer-bottom">
+          <p className="copyright">
+            © 2026 NeuroByteTalks. All rights reserved.
+          </p>
 
-          <div className="footer-col-links">
-            <h3 className="footer-heading">Support</h3>
-            <ul className="footer-list">
-              <li>
-                <Link className="footer-link" to="/">
-                  Account
-                </Link>
-              </li>
-              <li>
-                <Link className="footer-link" to="/">
-                  Help
-                </Link>
-              </li>
-              <li>
-                <Link className="footer-link" to="/">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link className="footer-link" to="/">
-                  Customer Support
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-col-legals">
-            <h3 className="footer-heading">Legals</h3>
-            <ul className="footer-list">
-              <li>
-                <Link className="footer-link" to="/">
-                  Terms &amp; Conditions
-                </Link>
-              </li>
-              <li>
-                <Link className="footer-link" to="/">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link className="footer-link" to="/">
-                  Licensing
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <p className="developer">
+            Designed & Developed by{" "}
+            <a
+              href="https://ayshasaeed.is-a.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Aysha Saeed
+            </a>
+          </p>
         </div>
       </div>
     </section>

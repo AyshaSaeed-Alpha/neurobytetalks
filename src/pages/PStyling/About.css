@@ -1,0 +1,44 @@
+.about-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: #fff;
+  color: #111;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.about-line {
+  width: 60px;
+  height: 2px;
+  background: #111;
+  margin-bottom: 30px;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #333;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.about-footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.about-footer span {
+  font-weight: 600;
+  color: #111;
+}
