@@ -5,7 +5,7 @@ import { Button, Container } from "../components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 
-import "./PStyling/post.css";
+import "./PStyling/Post.css";
 
 export default function Post() {
   const [post, setPost] = useState(null);
