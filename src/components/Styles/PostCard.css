@@ -1,0 +1,120 @@
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+  transform: translateY(-2px);
+}
+
+.post-card__image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+.post-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover .post-card__image-wrap img {
+  transform: scale(1.03);
+}
+
+.post-card__body {
+  padding: 1rem 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.35;
+  margin: 0;
+  font-family: Georgia, serif;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card__excerpt {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.55;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card__read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  transition: gap 0.2s;
+}
+
+.post-card:hover .post-card__read-more {
+  gap: 0.55rem;
+}
+
+.post-card__arrow {
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+
+.post-card:hover .post-card__arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 375px) {
+  .post-card__body {
+    padding: 0.75rem 0.85rem 1rem;
+  }
+
+  .post-card__title {
+    font-size: 0.95rem;
+  }
+
+  .post-card__excerpt {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 305px) {
+  .post-card__body {
+    padding: 0.6rem 0.7rem 0.85rem;
+    gap: 0.35rem;
+  }
+
+  .post-card__title {
+    font-size: 0.88rem;
+  }
+
+  .post-card__read-more {
+    font-size: 0.75rem;
+  }
+}

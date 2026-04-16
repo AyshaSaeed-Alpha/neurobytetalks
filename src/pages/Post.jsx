@@ -4,18 +4,17 @@ import service from "../appwrite/service";
 import { Button, Container } from "../components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
-import config from "../config/config";
+
+import "./PStyling/post.css";
+
 export default function Post() {
   const [post, setPost] = useState(null);
 
-  //TODO:   useParams() → to get the slug from the URL
   const { slug } = useParams();
   const navigate = useNavigate();
-  //Get the current user
+
   const userData = useSelector((state) => state.auth.userData);
-  //TODO: Check if current user is the author to only show him edit and delete buttons
-  //Only if post and userData are available
-  //Compares post's userId with logged-in user’s ID
+
   const isAuthor = post && userData ? post.userId === userData.$id : false;
 
   useEffect(() => {
@@ -24,66 +23,58 @@ export default function Post() {
         if (post) setPost(post);
         else navigate("/");
       });
-    } else navigate("/");
+    } else {
+      navigate("/");
+    }
   }, [slug, navigate]);
 
-  const deletePost = () => {
-    service.deletePost(post.$id).then((status) => {
-      if (status) {
-        service.deleteFile(post.featuredImage);
-        navigate("/");
-      }
-    });
+  const deletePost = async () => {
+    const status = await service.deletePost(post.$id);
+
+    if (status) {
+      navigate("/");
+    }
   };
 
   return post ? (
-    <div className="py-8">
+    <div className="post-page">
       <Container>
-        <div className="w-full flex justify-center mb-4 relative   border-white p-2">
-          <a
-            href={service.getFileView(post.featuredImage)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              // src={service.getFilePreview(
-              //   post.featuredImage,
-              //   config.appwriteBucketId,
-              //   2000, // width
-              //   2000, // height
-              //   "top", // gravity
-              //   100 // quality
-              // )}
-              src={service.getFileView(
-                post.featuredImage,
-                config.appwriteBucketId
-              )}
-              alt={post.title}
-              className="rounded-xl max-w-lg max-h-96 object-cover shadow"
-              style={{ background: "#f9f9f9" }}
-              // onError={(e) => {
-              //   e.target.onerror = null;
-              //   e.target.src = "/placeholder.jpg"; // use a safe fallback
-              // }}
-            />
-          </a>
+        <div className="post-wrapper">
+          {/* IMAGE SECTION */}
+          <div className="post-image-section">
+            <a
+              href={post.featuredImage}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={post.featuredImage}
+                alt={post.title}
+                className="post-image"
+              />
+            </a>
+            <div />
+          </div>
+
+          {/* CONTENT SECTION */}
+          <div className="post-content-section">
+            <h1 className="post-title">{post.title}</h1>
+
+            <div className="post-content">{parse(post.content)}</div>
+          </div>
+
           {isAuthor && (
-            <div className="absolute right-6 top-6">
+            <div className="post-actions">
               <Link to={`/edit-post/${post.$id}`}>
-                <Button bgColor=" bg-indigo-300 " className="mr-3">
-                  Edit
-                </Button>
+                <Button className="mr-3 Btn-post">Edit</Button>
               </Link>
-              <Button bgColor=" bg-indigo-300" onClick={deletePost}>
+
+              <Button className="Btn-post" onClick={deletePost}>
                 Delete
               </Button>
             </div>
           )}
         </div>
-        <div className="w-full mb-6">
-          <h1 className="text-2xl font-bold">{post.title}</h1>
-        </div>
-        <div className="browser-css">{parse(post.content)}</div>
       </Container>
     </div>
   ) : null;
